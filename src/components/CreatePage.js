@@ -10,7 +10,7 @@ const CreateAccountPage = () => {
                 <div className="login-box1">
                     <form>
                         <div className="ellipse-group">
-                            <div className="ellipse1"></div>
+                            <div className="ellipse1"></div> 
                             <div className="ellipse2"></div>
                             <div className="ellipse3"></div>
                         </div>

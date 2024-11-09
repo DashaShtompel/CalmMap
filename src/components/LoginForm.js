@@ -6,21 +6,33 @@ function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState({ username: '', password: '' });
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!username || !password) {
-      setError('This field is required');
-      return;
+    let formIsValid = true;
+    const newError = { username: '', password: '' };
+
+    if (!username) {
+      formIsValid = false;
+      newError.username = 'This field is required';
     }
-    setError('');
-    alert('Logged in successfully');
+
+    if (!password) {
+      formIsValid = false;
+      newError.password = 'Please enter a password';
+    }
+
+    setError(newError);
+
+    if (formIsValid) {
+      alert('Logged in successfully');
+    }
   };
 
   const handleCreateClick = () => {
-    navigate('/create');  // Переход на страницу CreatePage
+    navigate('/create');
   };
 
   return (
@@ -34,10 +46,12 @@ function LoginForm() {
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              required
+              className={error.username ? 'error' : ''}
+              id="username"
+              placeholder=" "
             />
             <label htmlFor="username">Username</label>
-            {error && <p id="errorMessage">{error}</p>}
+            {error.username && <p id="errorMessage">{error.username}</p>}
             <i className="bx bx-user icon"></i>
           </div>
           <div className="input-box">
@@ -45,9 +59,12 @@ function LoginForm() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              required
+              className={error.password ? 'error' : ''}
+              id="password"
+              placeholder=" "
             />
             <label htmlFor="password">Password</label>
+            {error.password && <p id="errorMessage">{error.password}</p>}
             <i className="bx bx-lock-alt icon"></i>
           </div>
           <div className="remember-forgot">

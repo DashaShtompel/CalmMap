@@ -102,12 +102,12 @@ h3 {
 }  
 
 .input-box input:focus ~ .icon,
-.input-box input:valid ~ .icon {
+.input-box input:not(:placeholder-shown):valid ~ .icon {
   transform: translateX(-20px);
 }
 
 .input-box input:focus,
-.input-box input:valid {
+.input-box input:not(:placeholder-shown):valid {
   border-color: rgb(139, 181, 228);
 }
 
@@ -123,24 +123,19 @@ h3 {
 }
 
 .input-box input:focus ~ label,
-.input-box input:valid ~ label {
-    position: absolute;
-    top: -10px;
-    font-size: 0.8em;
-    background-color: #D5DFF2;
-    padding: 0 9px;
-    border-radius: 30px;
-    color: #A3A3A3;
+.input-box input:not(:placeholder-shown):valid ~ label {
+  position: absolute;
+  top: -10px;
+  font-size: 0.9em;
+  background-color: #D5DFF2;
+  padding: 0 9px;
+  border-radius: 30px;
+  color: #A3A3A3;
 }
 
-.hidden {
-  display: none;
-}
-
-#errorMessage {
-  color: #CC4692;
-  margin-top: 10px;
-  font-size: 16px;
+.input-box input:focus ~ label,
+.input-box input:not(:placeholder-shown):valid ~ label {
+  transform: translateY(-50%);
 }
 
 .forgot-password {
@@ -251,3 +246,20 @@ font-size: 40px;
   float: right;
   margin-top: 20px; 
 }
+
+.input-box input.error {
+    border: 2px solid #CC4692;
+    box-shadow: 0 0 5px #CC4692;
+  }
+  
+  #errorMessage {
+    color: #CC4692;
+    font-size: 14px;
+    margin-top: 5px;
+    position: absolute;
+    bottom: -20px; /* Располагаем сообщение об ошибке ниже поля ввода */
+    left: 0;
+    width: 100%;
+  }
+  
+  
