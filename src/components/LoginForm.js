@@ -35,6 +35,20 @@ function LoginForm() {
     navigate('/create');
   };
 
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+    if (error.username) {
+      setError((prevState) => ({ ...prevState, username: '' }));
+    }
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+    if (error.password) {
+      setError((prevState) => ({ ...prevState, password: '' }));
+    }
+  };
+
   return (
     <div className="container">
       <div className="login-box">
@@ -45,27 +59,27 @@ function LoginForm() {
             <input
               type="text"
               value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={handleUsernameChange}
               className={error.username ? 'error' : ''}
               id="username"
               placeholder=" "
             />
             <label htmlFor="username">Username</label>
             {error.username && <p id="errorMessage">{error.username}</p>}
-            <i className="bx bx-user icon"></i>
+            <i className={`bx bx-user icon ${username ? 'filled' : ''}`}></i>
           </div>
           <div className="input-box">
             <input
               type="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={handlePasswordChange}
               className={error.password ? 'error' : ''}
               id="password"
               placeholder=" "
             />
             <label htmlFor="password">Password</label>
             {error.password && <p id="errorMessage">{error.password}</p>}
-            <i className="bx bx-lock-alt icon"></i>
+            <i className={`bx bx-lock-alt icon ${password ? 'filled' : ''}`}></i>
           </div>
           <div className="remember-forgot">
             <div className="remember-me">

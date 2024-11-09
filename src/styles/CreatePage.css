@@ -294,13 +294,6 @@ font-size: 40px;
     margin-top: 20px; 
   }
 
-  .error-message {
-    display: none;
-    color: rgb(163, 82, 169);
-    margin-top: 10px;
-    font-size: 16px;
-  }
-
   .text1 {
     font-size: 29px;
     text-align: center;
@@ -332,3 +325,25 @@ font-size: 40px;
     height: 40px;
     z-index: 2;
 }
+
+.error-message {
+    display: none;
+    color: #CC4692;
+    font-size: 14px;
+    margin-top: 5px;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+}
+
+.input-box1 input.error {
+    border: 2px solid #CC4692;
+    box-shadow: 0px 0px 5px #CC4692;
+}
+
+.input-box1 input:focus ~ .error-message,
+.input-box1 input.error ~ .error-message {
+    display: block;
+}
+
