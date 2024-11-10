@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
 import CreateAccountPage from './components/CreatePage';
+import ChatSupport from './components/ChatSupport';
 import './styles/LoginPage.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<LoginForm />} />
           <Route path="/create" element={<CreateAccountPage />} />
         </Routes>
+        <ChatSupport /> 
       </div>
     </Router>
   );
