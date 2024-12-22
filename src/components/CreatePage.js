@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/CreatePage.css';
 
-const CreateAccountPage = () => {
+function CreateAccountPage() {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -58,7 +58,7 @@ const CreateAccountPage = () => {
         <div>
             <img src="grad1.png" alt="First Background" className="image1" />
             <img src="grad2.png" alt="Second Background" className="image2" />
-            <div className="container">
+            <div className="container1">
                 <div className="login-box1">
                     <form>
                         <div className="ellipse-group">

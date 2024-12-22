@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap");
+.header {
+    position: fixed; /* Панель фиксируется на месте */
+    top: 0; /* Прикрепить к верхнему краю */
+    left: 0; /* Прижать к левому краю */
+    width: 100%; /* На всю ширину */
+    background-color: #eeeeee; /* Цвет фона */
+    padding: 20px;
+    z-index: 1000; /* Обеспечить, чтобы панель была выше других элементов */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для панельки */
+  }
+  
+  .main-content {
+    padding-top: 100px; /* Отступ, чтобы не перекрывать контент панелью */
+  }
+  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Общие стили для секции */
+.workspace {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 60px;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  .content {
+    max-width: 50%;
+  }
+  
+  .title {
+    font-size: 90px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  
+  .subtitle {
+    font-size: 40px;
+    color: #666666;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .btn:hover {
+    opacity: 0.9;
+  }
+  
+  /* Стили для изображения */
+  .image {
+    max-width: 40%;
+  }
+  
+  .image img {
+    width: 100%;
+    height: auto;
+  }
+  
+
+body {
+  font-family: "Comfortaa", sans-serif;
+  background-color: #f8f9fa;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #eeeeee;
+}
+
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.nav .nav-button {
+  font-family: "Comfortaa";
+  font-weight: bold;
+  color: #333333;
+  font-size: 24px;
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: white;
+  border-radius: 15px;
+}
+
+.nav-button.primary {
+  border-radius: 15px;
+  font-family: "Comfortaa";
+  font-weight: bold;
+  color: #333333;
+  font-size: 24px;
+  background: linear-gradient(45deg, #bdc9f2, #eed5f2);
+  border: none;
+}
+
+.main-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero {
+  width: 100%;
+  min-height: 60vh;
+  padding: 60px 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 40px 0;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.cta-button {
+  margin: 10px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.cta-button.secondary {
+  background-color: #dfe3ee;
+  color: black;
+}
+
+.quote {
+  font-style: italic;
+  background-color: #fafafa;
+  padding: 30px;
+  margin: 20px 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  padding: 40px 0;
+  background-color: #ffffff;
+}
+
+.feature {
+  flex: 1 1 calc(33.333% - 40px);
+  max-width: calc(33.333% - 40px);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.workflow {
+  background-color: #eef2f3;
+  width: 100%;
+  min-height: 40vh;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.workflow h2 {
+  font-size: 2rem;
+}
+
+.workflow p {
+  font-size: 1rem;
+  margin: 20px 0;
+}
+
+.workflow-details {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.workflow-details div {
+  flex: 1 1 300px;
+  padding: 20px;
+}
+
+.footer {
+  background-color: #dfe3ee;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-links a {
+  margin: 0 15px;
+  color: #4ca1af;
+  text-decoration: none;
+}

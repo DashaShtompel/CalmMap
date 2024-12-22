@@ -3,22 +3,22 @@ import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-route
 import LoginForm from './components/LoginForm';
 import CreateAccountPage from './components/CreatePage';
 import ChatSupport from './components/ChatSupport';
-import './styles/LoginPage.css';
+import MainPage from './components/MainPage';  // Импортируем компонент MainPage
+import './styles/MainPage.css';
+import PersonalAccount from './components/PersonalAccount';
 
-function App() {
+const App = () => {
   return (
     <Router>
-      <div>
-        <img src={`${process.env.PUBLIC_URL}/grad1.png`} alt="First Image" className="image1" />
-        <img src={`${process.env.PUBLIC_URL}/grad2.png`} alt="Second Image" className="image2" />
-        <Routes>
-          <Route path="/" element={<LoginForm />} />
-          <Route path="/create" element={<CreateAccountPage />} />
-        </Routes>
-        <ChatSupport /> 
-      </div>
+      <Routes>
+        {/* Главная страница */}
+        <Route path="/" element={<MainPage />} />
+        {/* Страница входа */}
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/create" element={<CreateAccountPage />} />
+      </Routes>
     </Router>
   );
-}
+};
 
 export default App;

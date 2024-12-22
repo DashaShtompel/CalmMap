@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import '../styles/LoginPage.css';
+import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
   const [username, setUsername] = useState('');
@@ -50,6 +50,9 @@ function LoginForm() {
   };
 
   return (
+    <div>
+        <img src="grad1.png" alt="First Background" className="image1" />
+        <img src="grad2.png" alt="Second Background" className="image2" />
     <div className="container">
       <div className="login-box">
         <h2>Hello</h2>
@@ -103,6 +106,7 @@ function LoginForm() {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 }
